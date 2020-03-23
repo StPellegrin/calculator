@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Calculator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323&display=swap">
+        <script src="index.js"></script>
+    </head>
+    <body>
+
+<!-- Inputs table -->
+        <form name="calculator">
+            <table> 
+<!--Displays--> 
+                <tbody>
+                <tr>
+                    <td colspan=3 ><input type="text" id="history" name="history" disabled></td>
+                    <td><input type="button" id="historyUp" name="historyUp" value="^" onclick="showHistory(1,'+')" ></td>
+                </tr> 
+                <tr>
+                    <td colspan=3 ><input id="display" name="display" type="text" disabled></td>
+                    <td><input type="button" id="historyDown" name="historyDown" value="v" onclick="showHistory(1,'-')"></td>
+                </tr>         
+<!-- misc -->
+                <tr>
+                    <td><input type="button" class="operator" name="openParen" value="(" onclick="calculator.display.value +='('"></td>
+                    <td><input type="button" class="operator" name="closeParen" value=")" onclick="calculator.display.value +=')'"></td>
+                    <td><input type="button" id="clear" name="clear" value="CE" onclick="calculator.display.value =''"></td>
+                    <td><input type="button" id="clearAll" name="clearAll" value="C" onclick="calculator.display.value =''"></td>
+                </tr>
+<!--7,8,9,operator-->   
+                <tr>
+                    <td><input type="button" value="7" onclick="calculator.display.value +='7'"></td>
+                    <td><input type="button" value="8" onclick="calculator.display.value +='8'"></td>
+                    <td><input type="button" value="9" onclick="calculator.display.value +='9'"></td>
+                    <td><input type="button" class="operator" name="divide" value="/" onclick="calculator.display.value +='/'"></td>
+                </tr>
+<!--4,5,6,operator-->
+                <tr>
+                    <td><input type="button" value="4" onclick="calculator.display.value +='4'"></td>
+                    <td><input type="button" value="5" onclick="calculator.display.value +='5'"></td>
+                    <td><input type="button" value="6" onclick="calculator.display.value +='6'"></td>
+                    <td><input type="button" class="operator" name="multiply" value="*" onclick="calculator.display.value +='*'"></td>
+                </tr>
+<!-- 1,2,3,operator-->
+                <tr>
+                    <td><input type="button" value="1" onclick="calculator.display.value +='1'"></td>
+                    <td><input type="button" value="2" onclick="calculator.display.value +='2'"></td>
+                    <td><input type="button" value="3" onclick="calculator.display.value +='3'"></td>
+                    <td><input type="button" class="operator" name="subtract" value="-" onclick="calculator.display.value +='-'"></td>
+                </tr>
+ <!--operator,0,operator,calculation-->
+                <tr>
+                    <td><input type="button" class="operator" name="decimal" value="." onclick="calculator.display.value +='.'"></td>
+                    <td><input type="button" value="0" onclick="calculator.display.value +='0'"></td>
+                    <td><input type="button" name="equals" value="=" onclick="calculator.display.value =calculation(calculator.display.value)"></td>
+                    <td><input type="button" class="operator" name="add" value="+" onclick="calculator.display.value +='+'"></td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+
+
+
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script src="" async defer></script>
+    </body>
+</html>
